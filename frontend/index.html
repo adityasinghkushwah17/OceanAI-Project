@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Authoring</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">AI <span class="brand-accent">Author</span></div>
+      <nav class="top-actions">
+        <div id="auth" class="auth-area">
+          <input id="email" class="input-small" placeholder="email" />
+          <input id="password" class="input-small" type="password" placeholder="password" />
+          <button id="btn-register" class="btn primary small">Register</button>
+          <button id="btn-login" class="btn outline small">Login</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="panel new-project">
+          <h3>Create Project</h3>
+          <input id="proj-title" placeholder="Project title" />
+          <select id="proj-type"><option value="docx">Word (.docx)</option><option value="pptx">PowerPoint (.pptx)</option></select>
+          <input id="proj-prompt" placeholder="Main topic / prompt" />
+          <button id="create-proj" class="btn primary">Create</button>
+        </div>
+
+        <div class="panel">
+          <h3>Your Projects</h3>
+          <div id="projects-list" class="projects-list"></div>
+        </div>
+      </aside>
+
+      <section id="app" class="content" style="display:block">
+        <div id="editor" class="editor">
+          <div class="placeholder">Open a project to edit and generate content.</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Editable suggestions panel -->
+    <div id="suggestions-panel" class="modal" style="display:none">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>AI Suggested Titles</h3>
+          <button id="close-suggestions" class="btn icon">✕</button>
+        </div>
+        <div id="suggestions-list" class="suggestions-list"></div>
+        <div class="modal-actions">
+          <button id="apply-suggestions" class="btn primary">Apply Selected</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
